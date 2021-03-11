@@ -1,4 +1,5 @@
 FROM alpine:3.12
-RUN apk update
-RUN apk add nginx openrc --no-cache
+COPY script.sh /
+RUN chmod +x script.sh
+CMD ./script.sh /bin/bash
 EXPOSE 80

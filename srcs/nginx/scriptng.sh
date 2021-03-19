@@ -1,6 +1,8 @@
 apk update
 apk add vim nginx openrc --no-cache
 
-sudo openrc reboot
+openrc reboot
 
 rc-service nginx start
+
+sh

@@ -7,7 +7,7 @@ RUN mkdir /www
 RUN mkdir /run/nginx
 
 COPY default.conf /etc/nginx/conf.d/
-COPY  index.php /www
+COPY index.php /www
 RUN wget https://wordpress.org/latest.tar.gz
 RUN tar xzvf latest.tar.gz && rm -rf latest.tar.gz && mv wordpress/ /www
 COPY wp-config.php /www/wordpress

@@ -1,5 +1,7 @@
 FROM alpine:3.12
-COPY script.sh /
-RUN chmod +x script.sh
-CMD ./script.sh
-EXPOSE 80
+COPY scriptng.sh /
+RUN mkdir www/
+COPY index.php /www
+RUN chmod +x scriptng.sh
+CMD ./scriptng.sh
+EXPOSE 80 443

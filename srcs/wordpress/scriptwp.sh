@@ -4,7 +4,7 @@ openrc reboot
 rc-service nginx start
 
 rc-service php-fpm7 start
-/etc/init.d/lighttpd restart
+# /etc/init.d/lighttpd restart
 
 #Config and start MySql
 /usr/bin/mysql_install_db --user=mysql
@@ -18,7 +18,7 @@ rc-service php-fpm7 start
 mysql -e "CREATE DATABASE wordpress;"
 mysql < ./wordpress.sql -u root wordpress;
 mysql -e "GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress'@'localhost' IDENTIFIED BY 'password';"
-mysql -e  "FLUSH PRIVILEGES;"
+mysql -e "FLUSH PRIVILEGES;"
 # EXIT
 
 sh

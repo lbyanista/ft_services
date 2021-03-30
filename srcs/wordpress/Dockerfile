@@ -19,7 +19,9 @@ COPY wp-config.php /www/wordpress
 RUN ln -s /www/wordpress/ /var/www/localhost/htdocs/wordpress
 
 COPY scriptwp.sh /
+
 COPY wordpress.sql /
+RUN sed -i '' "s/MK4IP/$/g" wordpress.sql
 RUN chmod +x scriptwp.sh
 CMD ./scriptwp.sh
 

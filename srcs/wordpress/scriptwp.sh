@@ -4,6 +4,7 @@ openrc reboot
 rc-service nginx start
 
 rc-service php-fpm7 start
+
 # /etc/init.d/lighttpd restart
 
 #Config and start MySql

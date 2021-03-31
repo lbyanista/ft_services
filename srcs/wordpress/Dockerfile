@@ -4,20 +4,13 @@ RUN apk add vim mysql mysql-client nginx php7 php7-common php7-ldap php7-ctype p
 
 
 RUN mkdir /www
-RUN mkdir /run/nginx
 
 COPY default.conf /etc/nginx/conf.d/
 COPY index.php /www
 RUN wget https://wordpress.org/latest.tar.gz
 RUN tar xzvf latest.tar.gz && rm -rf latest.tar.gz && mv wordpress/ /www
 COPY wp-config.php /www/wordpress
-# RUN rm -rf /etc/lighttpd/lighttpd.conf
-# COPY lighttpd.conf /etc/lighttpd/
-# RUN rc-service lighttpd start && rc-update add lighttpd default
-
-# RUN chown -R lighttpd /www/
 RUN ln -s /www/wordpress/ /var/www/localhost/htdocs/wordpress
-
 COPY scriptwp.sh /
 
 COPY wordpress.sql /

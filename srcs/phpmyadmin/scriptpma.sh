@@ -9,4 +9,10 @@ rc-service php-fpm7 start
 /etc/init.d/mariadb start && rc-update add mariadb default
 /usr/bin/mysqladmin -u root password 'password'
 
+#Create the PhpMyAdmin database
+mysql -e "CREATE DATABASE phpmyadmin;"
+# mysql < ./wordpress.sql -u root wordpress;
+mysql -e "GRANT ALL PRIVILEGES ON phpmyadmin.* TO 'phpmyadmin'@'localhost' IDENTIFIED BY 'password';"
+mysql -e "FLUSH PRIVILEGES;"
+
 sh

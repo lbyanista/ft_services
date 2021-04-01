@@ -11,6 +11,8 @@ RUN mkdir /www && mv phpmyadmin/ /www
 RUN ln -s /www/phpmyadmin/ /var/www/localhost/htdocs/phpmyadmin
 RUN mv /www/phpmyadmin/config.sample.inc.php config.inc.php
 COPY config.inc.php /www/phpmyadmin/
+RUN mkdir /www/phpmyadmin/tmp
+RUN chmod 777 /www/phpmyadmin/tmp
 COPY default.conf /etc/nginx/conf.d/
 COPY scriptpma.sh /
 RUN chmod +x scriptpma.sh

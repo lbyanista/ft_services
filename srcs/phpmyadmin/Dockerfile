@@ -9,6 +9,8 @@ RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.1.0/phpMyAdmin-5.1.0-all-lang
 
 RUN mkdir /www && mv phpmyadmin/ /www
 RUN ln -s /www/phpmyadmin/ /var/www/localhost/htdocs/phpmyadmin
+RUN mv /www/phpmyadmin/config.sample.inc.php config.inc.php
+COPY config.inc.php /www/phpmyadmin/
 COPY default.conf /etc/nginx/conf.d/
 COPY scriptpma.sh /
 RUN chmod +x scriptpma.sh

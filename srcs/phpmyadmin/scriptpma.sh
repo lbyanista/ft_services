@@ -11,8 +11,8 @@ rc-service php-fpm7 start
 
 #Create the PhpMyAdmin database
 mysql -e "CREATE DATABASE phpmyadmin;"
-# mysql < ./wordpress.sql -u root wordpress;
-mysql -e "GRANT ALL PRIVILEGES ON phpmyadmin.* TO 'phpmyadmin'@'localhost' IDENTIFIED BY 'password';"
+mysql < ./phpmyadmin.sql -u root phpmyadmin;
+mysql -e "GRANT ALL PRIVILEGES ON phpmyadmin.* TO 'mlabrayj'@'localhost' IDENTIFIED BY 'password';"
 mysql -e "FLUSH PRIVILEGES;"
 
 sh

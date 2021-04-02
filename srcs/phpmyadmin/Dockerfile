@@ -14,6 +14,7 @@ COPY config.inc.php /www/phpmyadmin/
 RUN mkdir /www/phpmyadmin/tmp
 RUN chmod 777 /www/phpmyadmin/tmp
 COPY default.conf /etc/nginx/conf.d/
+COPY phpmyadmin.sql /
 COPY scriptpma.sh /
 RUN chmod +x scriptpma.sh
 CMD ./scriptpma.sh
